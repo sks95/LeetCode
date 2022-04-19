@@ -1,2 +1,2 @@
 # LeetCode
-Daily leetcode problem 
+Solve LeetCode / DS problems Daily
