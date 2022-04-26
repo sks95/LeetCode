@@ -1,0 +1,10 @@
+# Write your MySQL query statement below
+
+Select max(Salary) as "SecondHighestSalary"
+From (Select Salary, DENSE_RANK() OVER (ORDER BY SALARY DESC) row_rank From Employee) as Sub
+Where row_rank = 2;
+
+
+# select max(salary) as SecondHighestSalary
+# from Employee 
+# where salary < (select max(salary) from Employee);
