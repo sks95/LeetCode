@@ -1,4 +1,4 @@
-```
+```Java
 class UndergroundSystem {
     Map<Integer, Pair<String, Integer>> checkInMap = new HashMap<>();
     Map<String, Pair<Double, Integer>> routeMap = new HashMap<>(); 
