@@ -1,0 +1,26 @@
+The "vowels" part in the problem statement makes it more confusing and makes it sound more complex, let's rephrase it using numbers:
+
+    Given an integer n, return the number of numbers of length n that consist only of digits 1 to 5 and all digits are non-decreasing.
+
+For example, given n = 2, we need to count: 11, 12, 13, 14, 15, 22, 23, 24, 25, 33, 34, 35, 44, 45, 55.
+
+The answer to the rephrased problem will be the same as to the original problem, these problems are equivalent.
+
+2. Solve the simple problem
+
+The problem defined in part 1 is known as a problem counting the number of combinations with repetitions.
+In particular, we need to choose n digits from the pool of 5 digits with repetitions.
+
+Why combinations, but not permutations? Because the number needs to be sorted (the digits should be non-decreasing), so we need to only count "112", but not "121", "211".
+
+The easiest way to calculate the number of combinations with repetitions is to use the folowing formula:
+image
+
+If we apply this formula to our problem where we choose n from 5 (k = n, n = 5), it can be then simplified to this:
+image
+
+class Solution {
+    public int countVowelStrings(int n) {
+        return (n+1)*(n+2)*(n+3)*(n+4) / 24;
+    }
+}
