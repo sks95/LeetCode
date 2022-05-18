@@ -1,0 +1,9 @@
+/* msqlServer */
+SELECT TOP(1) a.customer_number
+from
+(
+select customer_number, count(distinct order_number) as cnt
+from orders
+group by customer_number
+) a
+order by a.cnt desc;
