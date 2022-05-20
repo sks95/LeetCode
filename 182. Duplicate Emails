@@ -1,0 +1,14 @@
+select email
+from
+(
+    select email, count(email) cnt
+    from person
+    group by email
+    having count(email) > 1
+) a;
+
+
+# select email
+# from person
+# group by email
+# having count(email) > 1;
