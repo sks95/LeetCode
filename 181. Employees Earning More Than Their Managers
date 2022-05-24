@@ -1,0 +1,5 @@
+SELECT e.name AS Employee
+FROM employee e, employee m
+WHERE e.managerId IS NOT null
+AND e.managerId = m.id
+AND e.salary > m.salary;
