@@ -1,0 +1,30 @@
+# Write your MySQL query statement below
+select 
+Department,
+Employee,
+Salary
+from
+(
+    select 
+        d.name Department,
+        e.name Employee,
+        e.Salary Salary,
+        rank() over(partition by e.departmentId order by e.salary desc) rn
+        from employee e join department d on e.departmentId = d.id
+) sub
+where rn = 1;
+
+# with top_sal as
+# (
+#     select 
+#         d.name Department,
+#         e.name Employee,
+#         e.Salary Salary,
+#         rank() over(partition by e.departmentId order by e.salary desc) top
+#         from employee e, department d where e.departmentId = d.id
+# )
+
+# select Department, Employee, Salary from top_sal
+# where top = 1
+# order by 1 desc
+
