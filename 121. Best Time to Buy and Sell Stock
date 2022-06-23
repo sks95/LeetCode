@@ -1,0 +1,14 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int ans = 0;
+        int minsf = prices[0];
+        for(int i = 1; i < prices.length; i++){
+            int currProfit = prices[i] - minsf;
+            if(ans < currProfit){
+                ans = currProfit;
+            }
+            minsf = Math.min(minsf, prices[i]);
+        }
+        return ans;
+    }
+}
